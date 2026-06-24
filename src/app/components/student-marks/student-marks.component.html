@@ -1,0 +1,15 @@
+<h2>Student Marks</h2>
+
+<div *ngIf="loadError">
+  <p class="error">Error loading marks: {{ loadError }}</p>
+</div>
+
+<button class="btn-back" (click)="router.navigate(['/'])">Back to Home</button>
+
+<div *ngIf="!(loadError) && (student?.marks?.length ?? 0) === 0">
+  <p>No marks available for this student.</p>
+</div>
+
+<div *ngFor="let mark of student?.marks">
+  <p>{{ mark.subject }} : {{ mark.marks }}</p>
+</div>

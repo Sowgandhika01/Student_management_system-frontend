@@ -1,0 +1,16 @@
+<h2>Student Courses</h2>
+
+<button class="btn-back" (click)="router.navigate(['/'])">Back to Home</button>
+
+<div *ngIf="loadError">
+  <p class="error">Error loading courses: {{ loadError }}</p>
+</div>
+
+<div *ngIf="!(loadError) && (student?.courses?.length ?? 0) === 0">
+  <p>No courses available for this student.</p>
+</div>
+
+<div *ngFor="let course of student?.courses">
+  <p>{{ course.courseName || course.course_name || course.name }}</p>
+</div>
+

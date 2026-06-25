@@ -1,59 +1,322 @@
-# STUDENTCRUD
+Student Management System - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.27.
+A modern Angular 19 web application for managing student information, courses, and academic marks. Built with the latest Angular features and best practices for a responsive, component-driven user experience.
 
-## Development server
+---
 
-To start a local development server, run:
+TABLE OF CONTENTS
 
+- Overview
+- Tech Stack
+- Features
+- Prerequisites
+- Installation
+- Usage
+- Project Structure
+- Development
+- Testing
+- Building for Production
+- Configuration
+- Contributing
+- License
+
+---
+
+OVERVIEW
+
+The Student Management System is a full-featured web application designed to manage student records, course assignments, and academic performance tracking. It provides an intuitive interface for administrative operations including creating, reading, updating, and deleting student information.
+
+---
+
+TECH STACK
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Angular | 19.2.27 | Frontend framework |
+| TypeScript | 5.7.2 | Language |
+| RxJS | 7.8.0 | Reactive programming |
+| Node.js | Latest LTS | Runtime |
+| Express.js | 4.18.2 | Backend server |
+| Angular SSR | 19.2.27 | Server-side rendering |
+
+---
+
+FEATURES
+
+- ✅ Student Management - Create, read, update, and delete student records
+- ✅ Course Assignment - Assign courses to students and manage enrollments
+- ✅ Marks Tracking - Record and display student academic marks
+- ✅ Responsive Design - Works seamlessly on desktop and mobile devices
+- ✅ Real-time Updates - Automatic UI refresh when data changes
+- ✅ Server-Side Rendering - SSR support for better performance and SEO
+- ✅ API Integration - Proxy configuration for backend communication
+
+---
+
+PREREQUISITES
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (v18+ recommended) - Download from https://nodejs.org/
+- npm (v9+) or yarn (v3+)
+- Git (for version control)
+- Angular CLI (optional, but recommended)
+
+To check your versions:
 ```bash
-ng serve
+node --version
+npm --version
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+INSTALLATION
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Clone the Repository
 
 ```bash
-ng generate component component-name
+git clone https://github.com/yourusername/student-crud.git
+cd student-crud
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Install Dependencies
+
+```bash
+npm install
+```
+
+This will install all required packages from package.json.
+
+---
+
+USAGE
+
+Start Development Server
+
+```bash
+npm start
+```
+
+The application will run on http://localhost:4200/ with hot-reload enabled. Your browser will automatically refresh when you make changes to the code.
+
+Start Backend Server (Optional)
+
+If you have a backend server, run it simultaneously in another terminal:
+```bash
+cd backend
+npm install
+npm start
+```
+
+---
+
+PROJECT STRUCTURE
+
+```
+student-crud/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── student-list/          # Display and manage student list
+│   │   │   ├── student-form/          # Form for creating/editing students
+│   │   │   ├── student-courses/       # Manage student course assignments
+│   │   │   └── student-marks/         # Track and display student marks
+│   │   ├── models/
+│   │   │   ├── student.ts             # Student interface
+│   │   │   ├── course.ts              # Course interface
+│   │   │   └── marks.ts               # Marks interface
+│   │   ├── services/
+│   │   │   └── student.service.ts     # API communication service
+│   │   ├── app.component.ts           # Root component
+│   │   ├── app.routes.ts              # Application routes
+│   │   └── app.config.ts              # Angular configuration
+│   ├── main.ts                         # Application entry point
+│   ├── server.ts                       # SSR server setup
+│   └── styles.css                      # Global styles
+├── backend/                            # Backend API server
+├── public/                             # Static assets
+├── angular.json                        # Angular CLI configuration
+├── tsconfig.json                       # TypeScript configuration
+├── package.json                        # Dependencies and scripts
+├── proxy.conf.json                     # Development proxy configuration
+└── README.md                           # This file
+```
+
+---
+
+DEVELOPMENT
+
+Generate a New Component
+
+```bash
+ng generate component components/component-name
+```
+
+Generate a New Service
+
+```bash
+ng generate service services/service-name
+```
+
+View All Available Schematics
 
 ```bash
 ng generate --help
 ```
 
-## Building
+Code Architecture
 
-To build the project run:
+- Components: Reusable UI building blocks with own templates and styles
+- Services: Handle API calls and business logic using dependency injection
+- Models: TypeScript interfaces defining data structures
+- Routes: Define application navigation paths
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+TESTING
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Run Unit Tests
 
 ```bash
-ng e2e
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This runs all unit tests using Karma and Jasmine framework. Tests watch for file changes and re-run automatically.
 
-## Additional Resources
+View Test Coverage
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+ng test --code-coverage
+```
+
+Test reports are generated in the coverage/ directory.
+
+Test Files Location
+
+- Component tests: src/app/components/**/*.spec.ts
+- Service tests: src/app/services/**/*.spec.ts
+
+---
+
+BUILDING FOR PRODUCTION
+
+Create Production Build
+
+```bash
+npm run build
+```
+
+Artifacts are compiled and optimized, stored in dist/student-crud/ with:
+- Minification and tree-shaking
+- AOT (Ahead-of-Time) compilation
+- Bundle optimization
+
+Serve Production Build Locally
+
+```bash
+npm run serve:ssr:STUDENT_CRUD
+```
+
+---
+
+CONFIGURATION
+
+API Proxy Configuration
+
+Edit proxy.conf.json to configure API endpoints:
+
+```json
+{
+  "/api": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
+```
+
+Environment-Specific Settings
+
+Update src/app/app.config.ts for environment-specific configuration.
+
+Build Configuration
+
+Modify angular.json to customize build settings.
+
+---
+
+AVAILABLE SCRIPTS
+
+| Command | Description |
+|---------|-------------|
+| npm start | Start development server |
+| npm test | Run unit tests |
+| npm run build | Create production build |
+| npm run watch | Build in watch mode for development |
+| npm run serve:ssr:STUDENT_CRUD | Serve production build with SSR |
+
+---
+
+TROUBLESHOOTING
+
+Port Already in Use
+
+If port 4200 is already in use:
+```bash
+ng serve --port 4300
+```
+
+Clear Dependencies
+
+If you encounter package issues:
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+Module Not Found Errors
+
+Ensure all dependencies are installed:
+```bash
+npm install --save-dev @types/node
+```
+
+---
+
+LEARNING RESOURCES
+
+- Angular Official Documentation: https://angular.dev/
+- Angular CLI Documentation: https://angular.dev/tools/cli
+- TypeScript Handbook: https://www.typescriptlang.org/docs/
+- RxJS Documentation: https://rxjs.dev/
+
+---
+
+CONTRIBUTING
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (git checkout -b feature/AmazingFeature)
+3. Commit changes (git commit -m 'Add AmazingFeature')
+4. Push to branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+---
+
+LICENSE
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+SUPPORT
+
+For questions or support, please:
+- Open an issue on GitHub
+- Contact the development team
+- Check existing documentation
+
+---
+
+Last Updated: June 2026 | Angular Version: 19.2.27

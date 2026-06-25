@@ -4,7 +4,7 @@ A modern Angular 19 web application for managing student information, courses, a
 
 OVERVIEW
 
-The Student Management System is a full-featured web application designed to manage student records, course assignments, and academic performance tracking. It provides an intuitive interface for administrative operations including creating, reading, updating, and deleting student information.
+The Student Management System is a full-featured web application designed to manage student records, courses and marks. It provides an intuitive interface for administrative operations including creating, reading, updating, and deleting student information.
 
 TECH STACK
 

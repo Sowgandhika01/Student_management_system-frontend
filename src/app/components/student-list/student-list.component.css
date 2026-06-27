@@ -1,4 +1,4 @@
-.container {
+/* .container {
   width: 80%;
   margin: 30px auto;
   font-family: Arial, sans-serif;
@@ -83,4 +83,85 @@ tr:nth-child(even) {
   margin-right: 5px;
   cursor: pointer;
   border-radius: 4px;
+} */
+ /* Container */
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Heading */
+h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Add button */
+:host ::ng-deep button[pButton] {
+  margin-bottom: 20px;
+}
+
+/* Table wrapper */
+:host ::ng-deep .p-table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Table header */
+:host ::ng-deep .p-table thead th {
+  background-color: #f5f7fa;
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Table rows */
+:host ::ng-deep .p-table tbody td {
+  padding: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Hover effect */
+:host ::ng-deep .p-table tbody tr:hover {
+  background-color: #f9fbff;
+}
+
+/* Action buttons spacing */
+:host ::ng-deep td button {
+  margin-right: 8px;
+}
+
+/* Icon buttons (edit/delete) */
+:host ::ng-deep .p-button {
+  border-radius: 6px;
+}
+
+/* Delete button (danger) */
+:host ::ng-deep .p-button.p-button-danger {
+  background-color: #ef4444;
+  border: none;
+}
+
+/* Text buttons (Marks, Courses) */
+:host ::ng-deep .p-button.p-button-text {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
 }

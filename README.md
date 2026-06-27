@@ -2,31 +2,11 @@ Student Management System - Frontend
 
 A modern Angular 19 web application for managing student information, courses, and academic marks. Built with the latest Angular features and best practices for a responsive, component-driven user experience.
 
----
-
-TABLE OF CONTENTS
-
-- Overview
-- Tech Stack
-- Features
-- Prerequisites
-- Installation
-- Usage
-- Project Structure
-- Development
-- Testing
-- Building for Production
-- Configuration
-- Contributing
-- License
-
----
 
 OVERVIEW
 
-The Student Management System is a full-featured web application designed to manage student records, course assignments, and academic performance tracking. It provides an intuitive interface for administrative operations including creating, reading, updating, and deleting student information.
+The Student Management System is a full-featured web application designed to manage student records, courses and marks. It provides an intuitive interface for administrative operations including creating, reading, updating, and deleting student information.
 
----
 
 TECH STACK
 
@@ -36,22 +16,18 @@ TECH STACK
 | TypeScript | 5.7.2 | Language |
 | RxJS | 7.8.0 | Reactive programming |
 | Node.js | Latest LTS | Runtime |
-| Express.js | 4.18.2 | Backend server |
 | Angular SSR | 19.2.27 | Server-side rendering |
 
----
 
 FEATURES
 
-- ✅ Student Management - Create, read, update, and delete student records
-- ✅ Course Assignment - Assign courses to students and manage enrollments
-- ✅ Marks Tracking - Record and display student academic marks
-- ✅ Responsive Design - Works seamlessly on desktop and mobile devices
-- ✅ Real-time Updates - Automatic UI refresh when data changes
-- ✅ Server-Side Rendering - SSR support for better performance and SEO
-- ✅ API Integration - Proxy configuration for backend communication
-
----
+-  Student Management - Create, read, update, and delete student records
+-  Course Assignment - Assign courses to students and manage enrollments
+-  Marks Tracking - Record and display student  marks
+-  Responsive Design - Works seamlessly on desktop and mobile devices
+-  Real-time Updates - Automatic UI refresh when data changes
+-  Server-Side Rendering - SSR support for better performance and SEO
+-  API Integration - Proxy configuration for backend communication
 
 PREREQUISITES
 
@@ -68,14 +44,12 @@ node --version
 npm --version
 ```
 
----
-
 INSTALLATION
 
 Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/student-crud.git
+git clone https://github.com/Sowgandhika01/Student_management_system-frontend.git
 cd student-crud
 ```
 
@@ -86,8 +60,6 @@ npm install
 ```
 
 This will install all required packages from package.json.
-
----
 
 USAGE
 
@@ -171,7 +143,6 @@ Code Architecture
 - Models: TypeScript interfaces defining data structures
 - Routes: Define application navigation paths
 
----
 
 TESTING
 
@@ -196,7 +167,6 @@ Test Files Location
 - Component tests: src/app/components/**/*.spec.ts
 - Service tests: src/app/services/**/*.spec.ts
 
----
 
 BUILDING FOR PRODUCTION
 
@@ -243,8 +213,6 @@ Build Configuration
 
 Modify angular.json to customize build settings.
 
----
-
 AVAILABLE SCRIPTS
 
 | Command | Description |
@@ -283,15 +251,6 @@ npm install --save-dev @types/node
 
 ---
 
-LEARNING RESOURCES
-
-- Angular Official Documentation: https://angular.dev/
-- Angular CLI Documentation: https://angular.dev/tools/cli
-- TypeScript Handbook: https://www.typescriptlang.org/docs/
-- RxJS Documentation: https://rxjs.dev/
-
----
-
 CONTRIBUTING
 
 Contributions are welcome! Please follow these steps:
@@ -302,21 +261,5 @@ Contributions are welcome! Please follow these steps:
 4. Push to branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
----
-
-LICENSE
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-SUPPORT
-
-For questions or support, please:
-- Open an issue on GitHub
-- Contact the development team
-- Check existing documentation
-
----
 
 Last Updated: June 2026 | Angular Version: 19.2.27

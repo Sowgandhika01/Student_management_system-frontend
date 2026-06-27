@@ -2,11 +2,9 @@ Student Management System - Frontend
 
 A modern Angular 19 web application for managing student information, courses, and academic marks. Built with the latest Angular features and best practices for a responsive, component-driven user experience.
 
-
 OVERVIEW
 
 The Student Management System is a full-featured web application designed to manage student records, courses and marks. It provides an intuitive interface for administrative operations including creating, reading, updating, and deleting student information.
-
 
 TECH STACK
 
@@ -18,16 +16,15 @@ TECH STACK
 | Node.js | Latest LTS | Runtime |
 | Angular SSR | 19.2.27 | Server-side rendering |
 
-
 FEATURES
 
--  Student Management - Create, read, update, and delete student records
--  Course Assignment - Assign courses to students and manage enrollments
--  Marks Tracking - Record and display student  marks
--  Responsive Design - Works seamlessly on desktop and mobile devices
--  Real-time Updates - Automatic UI refresh when data changes
--  Server-Side Rendering - SSR support for better performance and SEO
--  API Integration - Proxy configuration for backend communication
+- Student Management - Create, read, update, and delete student records
+- Course Assignment - Assign courses to students and manage enrollments
+- Marks Tracking - Record and display student marks
+- Responsive Design - Works seamlessly on desktop and mobile devices
+- Real-time Updates - Automatic UI refresh when data changes
+- Server-Side Rendering - SSR support for better performance and SEO
+- API Integration - Proxy configuration for backend communication
 
 PREREQUISITES
 
@@ -71,16 +68,7 @@ npm start
 
 The application will run on http://localhost:4200/ with hot-reload enabled. Your browser will automatically refresh when you make changes to the code.
 
-Start Backend Server (Optional)
-
-If you have a backend server, run it simultaneously in another terminal:
-```bash
-cd backend
-npm install
-npm start
-```
-
----
+Start Backend Server
 
 PROJECT STRUCTURE
 
@@ -114,8 +102,6 @@ student-crud/
 └── README.md                           # This file
 ```
 
----
-
 DEVELOPMENT
 
 Generate a New Component
@@ -143,7 +129,6 @@ Code Architecture
 - Models: TypeScript interfaces defining data structures
 - Routes: Define application navigation paths
 
-
 TESTING
 
 Run Unit Tests
@@ -167,7 +152,6 @@ Test Files Location
 - Component tests: src/app/components/**/*.spec.ts
 - Service tests: src/app/services/**/*.spec.ts
 
-
 BUILDING FOR PRODUCTION
 
 Create Production Build
@@ -175,19 +159,11 @@ Create Production Build
 ```bash
 npm run build
 ```
-
-Artifacts are compiled and optimized, stored in dist/student-crud/ with:
-- Minification and tree-shaking
-- AOT (Ahead-of-Time) compilation
-- Bundle optimization
-
 Serve Production Build Locally
 
 ```bash
 npm run serve:ssr:STUDENT_CRUD
 ```
-
----
 
 CONFIGURATION
 
@@ -260,6 +236,5 @@ Contributions are welcome! Please follow these steps:
 3. Commit changes (git commit -m 'Add AmazingFeature')
 4. Push to branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
-
 
 Last Updated: June 2026 | Angular Version: 19.2.27

@@ -1,61 +1,108 @@
-<!-- <div class="form-container">
-  <h2>{{ id ? 'Edit Student' : 'Add Student' }}</h2>
+<div class="card">
 
-  <form (ngSubmit)="save()">
-    
-    <label>Name</label>
-    <input [(ngModel)]="student.name" name="name" required />
-
-    <label>Email</label>
-    <input [(ngModel)]="student.email" name="email" required />
-
-    <button type="submit">Save</button>
-  </form>
-</div> -->
-<div class="container">
-
-  <div style="display:flex;justify-content:space-between;align-items:center;">
+  <div class="header">
     <h2>{{ id ? 'Edit Student' : 'Add Student' }}</h2>
-    <button class="btn-back" (click)="router.navigate(['/'])">Back to Home</button>
+
+    <p-button 
+      label="Back" 
+      icon="pi pi-arrow-left"
+      severity="secondary"
+      (onClick)="router.navigate(['/'])">
+    </p-button>
   </div>
 
-  <!-- Name -->
-  <label>Name:</label>
-  <input [(ngModel)]="student.name" class="input" />
+  <div class="field">
+    <label>Name</label>
+    <input pInputText [(ngModel)]="student.name" />
+  </div>
 
-  <!-- Email -->
-  <label>Email:</label>
-  <input [(ngModel)]="student.email" class="input" />
+  <div class="field">
+    <label>Email</label>
+    <input pInputText [(ngModel)]="student.email" />
+  </div>
 
-  <!-- MARKS -->
   <h3>Marks</h3>
 
   <div *ngFor="let mark of student.marks; let i = index" class="mark-row">
-    <input [(ngModel)]="mark.subject" placeholder="Subject" class="input small">
-    <input [(ngModel)]="mark.marks" type="number" placeholder="Score" class="input small">
 
-    <button class="btn-remove" (click)="removeMark(i)">✖</button>
+    <input 
+      pInputText 
+      [(ngModel)]="mark.subject" 
+      placeholder="Subject" 
+      class="small-input">
+
+    <input 
+      pInputText 
+      [(ngModel)]="mark.marks" 
+      type="number" 
+      placeholder="Score"
+      class="small-input">
+
+    <p-button 
+      icon="pi pi-times" 
+      severity="danger"
+      (onClick)="removeMark(i)">
+    </p-button>
+
   </div>
 
-  <button class="btn-add" (click)="addMark()">+ Add Mark</button>
+  <p-button 
+    label="Add Mark" 
+    icon="pi pi-plus" 
+    severity="success"
+    (onClick)="addMark()">
+  </p-button>
 
-  <!-- COURSES -->
   <h3>Courses</h3>
 
   <div class="courses">
+
     <div *ngFor="let course of courses" class="course-item">
-      <span>{{ course.courseName || course.course_name || course.name }}</span>
-      <button class="btn-small" *ngIf="!isCourseChecked(course.id)" (click)="addCourseToStudent(course)">Add</button>
-      <button class="btn-small" *ngIf="isCourseChecked(course.id)" (click)="removeCourseFromStudent(course)">Remove</button>
+
+      <span>
+        {{ course.courseName || course.course_name || course.name }}
+      </span>
+
+      <p-button 
+        *ngIf="!isCourseChecked(course.id)"
+        label="Add"
+        size="small"
+        severity="success"
+        (onClick)="addCourseToStudent(course)">
+      </p-button>
+
+      <p-button 
+        *ngIf="isCourseChecked(course.id)"
+        label="Remove"
+        size="small"
+        severity="danger"
+        (onClick)="removeCourseFromStudent(course)">
+      </p-button>
+
     </div>
+
   </div>
 
-  <div style="margin-top:8px;">
-    <input class="input small" placeholder="New course name" [(ngModel)]="newCourseName">
-    <button class="btn-add" (click)="addCourseToDb()">Add Course</button>
-  </div>
+  <div class="add-course">
+    <input 
+      pInputText 
+      [(ngModel)]="newCourseName" 
+      placeholder="New course name">
 
-  <!-- SAVE BUTTON -->
-  <button class="btn-save" (click)="save()">Save</button>
+    <p-button 
+      label="Add Course" 
+      severity="info"
+      (onClick)="addCourseToDb()">
+    </p-button>
+
+  </div>
+  
+  <p-button 
+    label="Save" 
+    icon="pi pi-check" 
+    severity="success"
+    class="save-btn"
+    (onClick)="save()">
+  </p-button>
 
 </div>

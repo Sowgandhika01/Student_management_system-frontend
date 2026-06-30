@@ -1,11 +1,21 @@
+<div class="card">
+  <div class="header">
+    <h2>Student List</h2>
 
+    <p-button 
+      label="Add Student" 
+      icon="pi pi-plus" 
+      styleClass="add-btn"
+      routerLink="/add">
+    </p-button>
+  </div>
 
-<div class="container">
-  <h2>Student List</h2>
-
-  <button pButton label="Add Student" icon="pi pi-plus" routerLink="/add"></button>
-
-  <p-table [value]="students" [tableStyle]="{'min-width': '60rem'}">
+  <!-- PrimeNG Table -->
+  <p-table 
+    [value]="students" 
+    [tableStyle]="{ 'min-width': '50rem' }"
+    stripedRows 
+    showGridlines>
 
     <ng-template pTemplate="header">
       <tr>
@@ -21,26 +31,41 @@
         <td>{{ s.id }}</td>
         <td>{{ s.name }}</td>
         <td>{{ s.email }}</td>
-        <td>
 
-          <button pButton icon="pi pi-pencil"
-                  (click)="editStudent(s.id!)"></button>
+        <td class="flex">
 
-          <button pButton icon="pi pi-trash"
-                  severity="danger"
-                  (click)="deleteStudent(s.id!)"></button>
+          <p-button 
+            icon="pi pi-pencil" 
+            styleClass="icon-btn"
+            (onClick)="editStudent(s.id!)">
+          </p-button>
 
-          <button pButton label="Marks"
-                  class="p-button-text"
-                  (click)="viewMarks(s.id)"></button>
+  
+          <p-button 
+            icon="pi pi-trash" 
+            styleClass="icon-btn delete-btn"
+            (onClick)="deleteStudent(s.id!)">
+          </p-button>
 
-          <button pButton label="Courses"
-                  class="p-button-text"
-                  (click)="viewCourses(s.id)"></button>
+          <p-button 
+            label="Marks" 
+            severity="info"
+            size="small"
+            (onClick)="viewMarks(s.id)">
+          </p-button>
+
+
+          <p-button 
+            label="Courses" 
+            severity="secondary"
+            size="small"
+            (onClick)="viewCourses(s.id)">
+          </p-button>
 
         </td>
       </tr>
     </ng-template>
 
   </p-table>
+
 </div>

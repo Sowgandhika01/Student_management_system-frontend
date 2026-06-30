@@ -5,11 +5,14 @@ import { StudentService } from '../../services/student.service';
 import { OnInit } from '@angular/core';
 import { Student } from '../../models/student';
 import { Mark } from 'src/app/models/marks';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import {MessageModule} from 'primeng/message';
 
 @Component({
   selector: 'app-student-marks',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ButtonModule, TableModule,MessageModule],
   templateUrl: './student-marks.component.html',
   styleUrls: ['./student-marks.component.css'],
 })

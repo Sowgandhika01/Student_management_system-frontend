@@ -1,16 +1,48 @@
-<h2>Student Courses</h2>
+<div class="card">
 
-<button class="btn-back" (click)="router.navigate(['/'])">Back to Home</button>
+  <h2 class="title">Student Courses</h2>
 
-<div *ngIf="loadError">
-  <p class="error">Error loading courses: {{ loadError }}</p>
+  <div class="back-container">
+    <p-button 
+      label="Back" 
+      icon="pi pi-arrow-left" 
+      severity="secondary"
+      (onClick)="router.navigate(['/'])">
+    </p-button>
+  </div>
+
+  <p-message 
+    *ngIf="loadError" 
+    severity="error" 
+    text="Error loading courses: {{ loadError }}">
+  </p-message>
+
+  <p-message 
+    *ngIf="!loadError && (student?.courses?.length ?? 0) === 0" 
+    severity="info" 
+    text="No courses available for this student.">
+  </p-message>
+
+  <p-table 
+    *ngIf="student?.courses?.length" 
+    [value]="student?.courses ?? []"
+    [tableStyle]="{ 'min-width': '30rem' }"
+    stripedRows>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Course Name</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-course>
+      <tr>
+        <td>
+          {{ course.courseName || course.course_name || course.name }}
+        </td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+
 </div>
-
-<div *ngIf="!(loadError) && (student?.courses?.length ?? 0) === 0">
-  <p>No courses available for this student.</p>
-</div>
-
-<div *ngFor="let course of student?.courses">
-  <p>{{ course.courseName || course.course_name || course.name }}</p>
-</div>
-

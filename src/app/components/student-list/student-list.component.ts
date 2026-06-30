@@ -5,12 +5,13 @@ import { StudentService } from '../../services/student.service';
 import { Student } from '../../models/student';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import {TableModule} from 'primeng/table';
+import {RouterLink} from '@angular/router';
 @Component({
   selector: 'app-student-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, TableModule, ButtonModule],
+  imports: [CommonModule, RouterModule, ButtonModule, TableModule, RouterLink],
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })

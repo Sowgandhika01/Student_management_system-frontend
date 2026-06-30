@@ -1,1 +1,12 @@
-<router-outlet />
+<div class="app-container">
+  <nav class="app-navbar" *ngIf="isAuthenticated">
+    <div class="navbar-content">
+      <h1 class="app-title">Student Management</h1>
+      <div class="navbar-user">
+        <span class="user-info" *ngIf="currentUser">Welcome, {{ currentUser.email }}</span>
+        <button pButton type="button" label="Logout" icon="pi pi-sign-out" class="p-button-danger p-button-sm" (click)="logout()"></button>
+      </div>
+    </div>
+  </nav>
+  <router-outlet />
+</div>

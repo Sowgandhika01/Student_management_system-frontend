@@ -1,126 +1,98 @@
-/* .form-container {
-  width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  background-color: #fff;
-  font-family: Arial, sans-serif;
+.card {
+  max-width: 650px;
+  margin: 40px auto; 
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
-
-h2 {
-  text-align: center;
-  color: #333;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
-
-form {
+.field {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 }
-
-label {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-weight: bold;
+.field label {
+  margin-bottom: 6px;
+  font-weight: 500;
 }
-
-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-}
-
-input:focus {
-  border-color: #007bff;
-}
-
-button {
-  margin-top: 15px;
-  padding: 10px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-} */
-
-.container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border-radius: 10px;
-  background: #f5f7fa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-h2 {
-  text-align: center;
-}
-
-h3 {
-  margin-top: 20px;
-}
-
-.input {
+.p-inputtext {
   width: 100%;
-  margin: 8px 0;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.small {
-  width: 40%;
 }
 
 .mark-row {
   display: flex;
-  gap: 10px;
+  gap: 10px;              
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 
-.btn-add {
+.small-input {
+  width: 120px;
+}
+
+.p-button.p-button-danger {
+  height: 30px;
+  width: 30px;
+  padding: 0;
+}
+.p-button[label="Add Mark"] {
   margin-top: 10px;
-  padding: 6px 10px;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn-remove {
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 5px;
-  cursor: pointer;
 }
 
 .courses {
-  display: flex;
-  flex-direction: column;
   margin-top: 10px;
 }
 
 .course-item {
-  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #f9fafb;
+}
+.course-item .p-button {
+  margin-left: 10px;     
 }
 
-.btn-save {
+.p-button.p-button-sm {
+  padding: 4px 10px !important;
+  font-size: 0.8rem;
+  height: 30px;
+}
+
+.p-button.p-button-success {
+  background: linear-gradient(90deg, #22c55e, #16a34a) !important;
+  border: none !important;
+  color: white !important;
+}
+.p-button.p-button-danger {
+  background: linear-gradient(90deg, #ef4444, #dc2626) !important;
+  border: none !important;
+  color: white !important;
+}
+.add-course {
+  display: flex;
+  gap: 10px;   
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.save-btn {
   width: 100%;
+  margin-top: 50px;
+}
+
+h3 {
   margin-top: 20px;
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: 600;
 }

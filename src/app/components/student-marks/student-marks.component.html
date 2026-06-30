@@ -1,15 +1,48 @@
-<h2>Student Marks</h2>
+<div class="card">
 
-<div *ngIf="loadError">
-  <p class="error">Error loading marks: {{ loadError }}</p>
-</div>
+  <h2 class="title">Student Marks</h2>
 
-<button class="btn-back" (click)="router.navigate(['/'])">Back to Home</button>
+  <p-message 
+    *ngIf="loadError" 
+    severity="error" 
+    text="Error loading marks: {{ loadError }}">
+  </p-message>
 
-<div *ngIf="!(loadError) && (student?.marks?.length ?? 0) === 0">
-  <p>No marks available for this student.</p>
-</div>
+  <div class="back-container">
+    <p-button 
+      label="Back" 
+      icon="pi pi-arrow-left" 
+      severity="secondary"
+      (onClick)="router.navigate(['/'])">
+    </p-button>
+  </div>
 
-<div *ngFor="let mark of student?.marks">
-  <p>{{ mark.subject }} : {{ mark.marks }}</p>
+  <p-message 
+    *ngIf="!loadError && (student?.marks?.length ?? 0) === 0" 
+    severity="info" 
+    text="No marks available for this student.">
+  </p-message>
+
+  <p-table 
+    *ngIf="student.marks.length" 
+    [value]="student.marks"
+    [tableStyle]="{ 'min-width': '10rem' }"
+    stripedRows>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-mark>
+      <tr>
+        <td>{{ mark.subject }}</td>
+        <td>{{ mark.marks }}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+
 </div>

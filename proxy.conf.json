@@ -1,4 +1,10 @@
 {
+  "/auth": {
+    "target": "http://localhost:8086",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
   "/students": {
     "target": "http://localhost:8086",
     "secure": false,

@@ -1,0 +1,47 @@
+
+<div class="login-page">
+  <div class="login-card p-shadow-4">
+    <h1 class="login-title">Student Management System</h1>
+    <h2 class="login-subtitle">Sign In</h2>
+
+    <div *ngIf="errorMessage" class="p-field p-mb-3">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+
+    <div *ngIf="successMessage" class="p-field p-mb-3">
+      <p class="success-message">{{ successMessage }}</p>
+    </div>
+
+    <div class="p-field p-mb-3">
+      <label for="email">Email</label>
+      <input id="email" pInputText 
+             type="email" 
+             [(ngModel)]="email" 
+             placeholder="Enter your email"
+             class="p-inputtext-lg"
+             [disabled]="loading" />
+    </div>
+
+    <div class="p-field p-mb-3">
+      <label for="password">Password</label>
+      <input id="password" pInputText 
+             type="password" 
+             [(ngModel)]="password" 
+             placeholder="Enter your password"
+             class="p-inputtext-lg"
+             [disabled]="loading" />
+    </div>
+
+    <button pButton 
+            type="button" 
+            label="Sign In" 
+            class="p-button-primary p-mb-2 w-full"
+            (click)="login()"
+            [loading]="loading"
+            [disabled]="loading"></button>
+
+    <div class="p-text-center p-mt-3">
+      <p>Don't have an account? <a routerLink="/signup" class="signup-link">Sign Up</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+ .p-button.icon-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+
+/* Delete button */
+ .p-button.icon-btn.delete-btn {
+  background: #ef4444 !important;
+  border: none !important;
+  color: white !important;
+}

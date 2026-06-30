@@ -1,0 +1,66 @@
+<div class="signup-page">
+  <div class="signup-card p-shadow-4">
+    <h1 class="signup-title">Student Management System</h1>
+    <h2 class="signup-subtitle">Create Account</h2>
+
+    <div *ngIf="errorMessage" class="p-field p-mb-3">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+
+    <div *ngIf="successMessage" class="p-field p-mb-3">
+      <p class="success-message">{{ successMessage }}</p>
+    </div>
+
+    <div class="p-field p-mb-3">
+      <label for="name">Full Name</label>
+      <input id="name" pInputText 
+             type="text" 
+             [(ngModel)]="name" 
+             placeholder="Enter your full name"
+             class="p-inputtext-lg"
+             [disabled]="loading" />
+    </div>
+
+    <div class="p-field p-mb-3">
+      <label for="email">Email</label>
+      <input id="email" pInputText 
+             type="email" 
+             [(ngModel)]="email" 
+             placeholder="Enter your email"
+             class="p-inputtext-lg"
+             [disabled]="loading" />
+    </div>
+
+    <div class="p-field p-mb-3">
+      <label for="password">Password</label>
+      <input id="password" pInputText 
+             type="password" 
+             [(ngModel)]="password" 
+             placeholder="Enter password (min 6 chars)"
+             class="p-inputtext-lg"
+             [disabled]="loading" />
+    </div>
+
+    <div class="p-field p-mb-3">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" pInputText 
+             type="password" 
+             [(ngModel)]="confirmPassword" 
+             placeholder="Confirm password"
+             class="p-inputtext-lg"
+             [disabled]="loading" />
+    </div>
+
+    <button pButton 
+            type="button" 
+            label="Sign Up" 
+            class="p-button-primary p-mb-2 w-full"
+            (click)="signup()"
+            [loading]="loading"
+            [disabled]="loading"></button>
+
+    <div class="p-text-center p-mt-3">
+      <p>Already have an account? <a routerLink="/login" class="login-link">Sign In</a></p>
+    </div>
+  </div>
+</div>

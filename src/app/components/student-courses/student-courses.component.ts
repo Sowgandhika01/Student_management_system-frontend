@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from '../../services/student.service';
 import { OnInit } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import {MessageModule} from 'primeng/message';
+
 @Component({
   selector: 'app-student-courses',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonModule, TableModule, MessageModule],
   templateUrl: './student-courses.component.html',
   styleUrls: ['./student-courses.component.css']
 })
